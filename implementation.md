@@ -41,3 +41,8 @@ Outputs: prompt_comparison.json, optimization_report.txt
 | Est. cost | $0.0049 |
 
 Key finding: The minimal prompt got name, pIC50, and activity_class correct but failed on scaffold_family for all 5 compounds. The expert prompt achieved 100% by defining the exact taxonomy (benz/naph/ind/quin/pyr/bzim) and the prefix-to-family mapping rule. This demonstrates that domain-specific definitions in system prompts are critical for extraction tasks with implicit ontologies.
+
+## Risks (resolved)
+- Small n (5) may not show statistical significance — 0% vs 100% is unambiguous
+- Both prompts may achieve 100% on easy examples — minimal prompt failed on scaffold_family (implicit ontology)
+- Expert prompt cost slightly higher (more tokens) — difference negligible ($0.0049 total for both)
